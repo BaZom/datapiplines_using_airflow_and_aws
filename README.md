@@ -14,7 +14,7 @@ AWS S3 links for each:
 Log data json path: `s3://udacity-dend/log_json_path.json`
 
 ## Project files
-- __tree__
+- 
    - [README.md](README.md)
    - __dags__
      - [create\_tables.sql](dags/create_tables.sql)
