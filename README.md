@@ -14,7 +14,7 @@ AWS S3 links for each:
 Log data json path: `s3://udacity-dend/log_json_path.json`
 
 ## Project files
-- __D:\\udacity\\PR5\\New folder\\project\_template 3__
+- __tree__
    - [README.md](README.md)
    - __dags__
      - [create\_tables.sql](dags/create_tables.sql)
@@ -36,8 +36,7 @@ Log data json path: `s3://udacity-dend/log_json_path.json`
        - [load\_dimension.py](plugins/operators/load_dimension.py)
        - [load\_fact.py](plugins/operators/load_fact.py)
        - [stage\_redshift.py](plugins/operators/stage_redshift.py)
-   - [tree.txt](tree.txt)
-   - [~$tree.txt](~%24tree.txt)
+
 
 ## Project steps
 - 
