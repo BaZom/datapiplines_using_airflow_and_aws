@@ -14,36 +14,30 @@ AWS S3 links for each:
 Log data json path: `s3://udacity-dend/log_json_path.json`
 
 ## Project files
-...bash
-|   README.md
-|   tree.txt
-|
-+---dags
-|       create_tables.sql
-|       create_tables_dag.py
-|       create_tables_dag.txt
-|       load_from_s3_into_redshift_dag.py
-|
-+---images
-|       staging_tables.png
-|       star_schema.png
-|
-\---plugins
-    |   __init__.py
-    |
-    +---helpers
-    |       .DS_Store
-    |       sql_queries.py
-    |       __init__.py
-    |
-    \---operators
-            .DS_Store
-            data_quality.py
-            load_dimension.py
-            load_fact.py
-            stage_redshift.py
-            __init__.py        
-...
+- __D:\\udacity\\PR5\\New folder\\project\_template 3__
+   - [README.md](README.md)
+   - __dags__
+     - [create\_tables.sql](dags/create_tables.sql)
+     - [create\_tables\_dag.py](dags/create_tables_dag.py)
+     - [create\_tables\_dag.txt](dags/create_tables_dag.txt)
+     - [load\_from\_s3\_into\_redshift\_dag.py](dags/load_from_s3_into_redshift_dag.py)
+   - __images__
+     - [staging\_tables.png](images/staging_tables.png)
+     - [star\_schema.png](images/star_schema.png)
+   - [list.md](list.md)
+   - __plugins__
+     - [\_\_init\_\_.py](plugins/__init__.py)
+     - __helpers__
+       - [\_\_init\_\_.py](plugins/helpers/__init__.py)
+       - [sql\_queries.py](plugins/helpers/sql_queries.py)
+     - __operators__
+       - [\_\_init\_\_.py](plugins/operators/__init__.py)
+       - [data\_quality.py](plugins/operators/data_quality.py)
+       - [load\_dimension.py](plugins/operators/load_dimension.py)
+       - [load\_fact.py](plugins/operators/load_fact.py)
+       - [stage\_redshift.py](plugins/operators/stage_redshift.py)
+   - [tree.txt](tree.txt)
+   - [~$tree.txt](~%24tree.txt)
 
 ## Project steps
 - 
