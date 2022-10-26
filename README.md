@@ -68,4 +68,5 @@ __Setting up Connections__
    - Connect Airflow to the AWS Redshift Cluster: connection ID is "redshift"
 
 __Run [create\_tables\_dag.py](dags/create_tables_dag.py)__
+
 __Run [load\_from\_s3\_into\_redshift\_dag.py](dags/load_from_s3_into_redshift_dag.py)__
