@@ -18,13 +18,13 @@ default_args = {
     'retries': 3,
     'retry_delay': timedelta(minutes=5),
     'catchup': False,
-    'start_date': datetime(2022, 5, 12)
+    'start_date': datetime.now()
 }
 
 dag = DAG('load_data_from_s3_to_redshift_etl',
           default_args=default_args,
           description='Load and transform data in Redshift with Airflow',
-          schedule_interval='* * 0 0 *'
+          schedule_interval='0 * * * *'
         )
 
 start_operator = DummyOperator(task_id='Begin_execution',  dag=dag)
