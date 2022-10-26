@@ -14,16 +14,16 @@ AWS S3 links for each:
 Log data json path: `s3://udacity-dend/log_json_path.json`
 
 ## Project files
-   - [README.md](README.md)
    - __dags__
      - [create\_tables.sql](dags/create_tables.sql)
      - [create\_tables\_dag.py](dags/create_tables_dag.py)
      - [create\_tables\_dag.txt](dags/create_tables_dag.txt)
      - [load\_from\_s3\_into\_redshift\_dag.py](dags/load_from_s3_into_redshift_dag.py)
    - __images__
+     - [create\_tables\_dag\_graph.JPG](images/create_tables_dag_graph.JPG)
+     - [etl\_graph.JPG](images/etl_graph.JPG)
      - [staging\_tables.png](images/staging_tables.png)
      - [star\_schema.png](images/star_schema.png)
-   - [list.md](list.md)
    - __plugins__
      - [\_\_init\_\_.py](plugins/__init__.py)
      - __helpers__
@@ -35,7 +35,7 @@ Log data json path: `s3://udacity-dend/log_json_path.json`
        - [load\_dimension.py](plugins/operators/load_dimension.py)
        - [load\_fact.py](plugins/operators/load_fact.py)
        - [stage\_redshift.py](plugins/operators/stage_redshift.py)
-
+   - [README.md](README.md)
 
 ## Project steps
 - 
