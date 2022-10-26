@@ -21,7 +21,7 @@ default_args = {
     'start_date': datetime(2022, 5, 12)
 }
 
-dag = DAG('udac_dag',
+dag = DAG('load_data_from_s3_to_redshift_etl',
           default_args=default_args,
           description='Load and transform data in Redshift with Airflow',
           schedule_interval='* * 0 0 *'
@@ -29,13 +29,7 @@ dag = DAG('udac_dag',
 
 start_operator = DummyOperator(task_id='Begin_execution',  dag=dag)
 
-create_tables_task = PostgresOperator(
-    task_id="create_tables_on_redshift",
-    dag=dag,
-    postgres_conn_id="redshift",
-    sql='create_tables.sql'
-    
-)
+
 stage_events_to_redshift = StageToRedshiftOperator(
     task_id='Stage_events',
     dag=dag,
@@ -137,4 +131,9 @@ run_quality_checks = DataQualityOperator(
 
 end_operator = DummyOperator(task_id='Stop_execution',  dag=dag)
 
-start_operator >> create_tables_task >> [stage_events_to_redshift , stage_songs_to_redshift] >> load_songplays_table >> [load_user_dimension_table, load_song_dimension_table, load_artist_dimension_table, load_time_dimension_table] >> run_quality_checks >> end_operator
+start_operator \
+        >> [stage_events_to_redshift , stage_songs_to_redshift] \
+            >> load_songplays_table \
+                >> [load_user_dimension_table, load_song_dimension_table, load_artist_dimension_table, load_time_dimension_table] \
+                    >> run_quality_checks \
+                        >> end_operator
