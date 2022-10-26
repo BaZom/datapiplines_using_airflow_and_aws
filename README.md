@@ -14,7 +14,7 @@ AWS S3 links for each:
 Log data json path: `s3://udacity-dend/log_json_path.json`
 
 ## Project files
-
+...bash
 |   README.md
 |   tree.txt
 |
@@ -42,8 +42,8 @@ Log data json path: `s3://udacity-dend/log_json_path.json`
             load_dimension.py
             load_fact.py
             stage_redshift.py
-            __init__.py
-           
+            __init__.py        
+...
 
 ## Project steps
 - 
