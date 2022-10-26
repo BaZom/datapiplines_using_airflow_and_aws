@@ -33,7 +33,7 @@ default_args = {
     'start_date': datetime.now()
 }
 
-dag = DAG('create_tables_dag',
+dag = DAG('create_redshift_tables_dag',
           default_args=default_args,
         )
 
@@ -48,7 +48,7 @@ create_tables_task = PostgresOperator(
 )
 
 run_quality_checks = PythonOperator(
-    task_id='check_table_created_and_empty',
+    task_id='check_if_table_exists_on_redshift',
     dag=dag,
     python_callable=check_table_exists,
     provide_context=True,
