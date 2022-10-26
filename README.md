@@ -16,29 +16,26 @@ Log data json path: `s3://udacity-dend/log_json_path.json`
 ## Project files
    - __dags__
      - [create\_tables.sql](dags/create_tables.sql) contains sql queries to create the star schema and the staging tables 
-     - [create\_tables\_dag.py](dags/create_tables_dag.py)
-     - [create\_tables\_dag.txt](dags/create_tables_dag.txt)
-     - [load\_from\_s3\_into\_redshift\_dag.py](dags/load_from_s3_into_redshift_dag.py)
+     - [create\_tables\_dag.py](dags/create_tables_dag.py) dag for creating the star schema and the staging tables on redshift
+     - [load\_from\_s3\_into\_redshift\_dag.py](dags/load_from_s3_into_redshift_dag.py) dag for loading data from s3 into redshift and doing quality checks
    - __images__
-     - [create\_tables\_dag\_graph.JPG](images/create_tables_dag_graph.JPG)
-     - [etl\_graph.JPG](images/etl_graph.JPG)
-     - [staging\_tables.png](images/staging_tables.png)
-     - [star\_schema.png](images/star_schema.png)
+     - [create\_tables\_dag\_graph.JPG](images/create_tables_dag_graph.JPG) airflow dag graph for creating tables
+     - [etl\_graph.JPG](images/etl_graph.JPG) airflow etl graph
+     - [staging\_tables.png](images/staging_tables.png) staging tables
+     - [star\_schema.png](images/star_schema.png) star schema tables
    - __plugins__
      - [\_\_init\_\_.py](plugins/__init__.py)
      - __helpers__
        - [\_\_init\_\_.py](plugins/helpers/__init__.py)
-       - [sql\_queries.py](plugins/helpers/sql_queries.py)
+       - [sql\_queries.py](plugins/helpers/sql_queries.py) sql queries for inserting data into fact and dimension tables
      - __operators__
        - [\_\_init\_\_.py](plugins/operators/__init__.py)
-       - [data\_quality.py](plugins/operators/data_quality.py)
-       - [load\_dimension.py](plugins/operators/load_dimension.py)
-       - [load\_fact.py](plugins/operators/load_fact.py)
-       - [stage\_redshift.py](plugins/operators/stage_redshift.py)
+       - [data\_quality.py](plugins/operators/data_quality.py) customized operator for quality checks
+       - [load\_dimension.py](plugins/operators/load_dimension.py) customized operator for loading data into dimension tables
+       - [load\_fact.py](plugins/operators/load_fact.py) customized operator for loading data into fact table
+       - [stage\_redshift.py](plugins/operators/stage_redshift.py) customized operator for loading data into staging tables
    - [README.md](README.md)
 
-## Project steps
-- 
 ## Staging tables
 
 ![enter image description here](https://github.com/BaZom/Data-warehouse-with-AWS-S3-and-Redshift/blob/4361dc1f49353701d142e70bcecdf2d2b8fe0633/staging_tables.png)
@@ -57,5 +54,18 @@ Log data json path: `s3://udacity-dend/log_json_path.json`
 ### etl dag
 ![etl dag](https://github.com/BaZom/datapiplines_using_airflow_and_aws/blob/main/images/etl_graph.JPG)
 
-## How to run
+## Project steps
+-  creating dag for creating tables
+- implementing the etl dag with the needed customized operators
 - 
+## How to run
+__Create an IAM User in AWS__
+   - Needed Permissions: AdministratorAccess, AmazonS3FullAccess and AmazonRedshiftDataFullAccess 
+__Create a redshift cluster in AWS__
+   - Ensure that you are creating this cluster in the us-west-2 region. This is important as the s3-bucket that we are going to use for this project is in us-west-2.
+
+__Setting up Connections__
+   - Connect Airflow and AWS: connection ID is "aws_credentials"
+   - Connect Airflow to the AWS Redshift Cluster: connection ID is "redshift"
+__Run [create\_tables\_dag.py](dags/create_tables_dag.py)__
+__Run [load\_from\_s3\_into\_redshift\_dag.py](dags/load_from_s3_into_redshift_dag.py)__
