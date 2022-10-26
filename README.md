@@ -57,7 +57,6 @@ Log data json path: `s3://udacity-dend/log_json_path.json`
 ## Project steps
 -  creating dag for creating tables
 - implementing the etl dag with the needed customized operators
-- 
 ## How to run
 __Create an IAM User in AWS__
    - Needed Permissions: AdministratorAccess, AmazonS3FullAccess and AmazonRedshiftDataFullAccess 
@@ -67,5 +66,6 @@ __Create a redshift cluster in AWS__
 __Setting up Connections__
    - Connect Airflow and AWS: connection ID is "aws_credentials"
    - Connect Airflow to the AWS Redshift Cluster: connection ID is "redshift"
-__Run [create\_tables\_dag.py](dags/create_tables_dag.py)__
+
+__Run [create\_tables\_dag.py]__(dags/create_tables_dag.py)
 __Run [load\_from\_s3\_into\_redshift\_dag.py](dags/load_from_s3_into_redshift_dag.py)__
