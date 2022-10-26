@@ -15,7 +15,7 @@ Log data json path: `s3://udacity-dend/log_json_path.json`
 
 ## Project files
    - __dags__
-     - [create\_tables.sql](dags/create_tables.sql)
+     - [create\_tables.sql](dags/create_tables.sql) contains sql queries to create the star schema and the staging tables 
      - [create\_tables\_dag.py](dags/create_tables_dag.py)
      - [create\_tables\_dag.txt](dags/create_tables_dag.txt)
      - [load\_from\_s3\_into\_redshift\_dag.py](dags/load_from_s3_into_redshift_dag.py)
