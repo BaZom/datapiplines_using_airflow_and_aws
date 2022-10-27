@@ -60,8 +60,9 @@ Log data json path: `s3://udacity-dend/log_json_path.json`
 ## How to run
 __Create an IAM User in AWS__
    - Needed Permissions: AdministratorAccess, AmazonS3FullAccess and AmazonRedshiftDataFullAccess 
-__Create a redshift cluster in AWS__
-   - Ensure that you are creating this cluster in the us-west-2 region. This is important as the s3-bucket that we are going to use for this project is in us-west-2.
+   
+__Create a redshift cluster__
+   - Ensure that you are creating this cluster in the us-west-2 region. This is important as the s3-bucket that we use for this project is in us-west-2.
 
 __Setting up Connections__
    - Connect Airflow and AWS: connection ID is "aws_credentials"
